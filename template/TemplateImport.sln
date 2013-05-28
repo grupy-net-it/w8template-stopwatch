@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateImport", "TemplateImport\TemplateImport.csproj", "{3e04ee80-9529-4a56-acb1-b22ee5561dfd}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E04EE80-9529-4A56-ACB1-B22EE5561DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E04EE80-9529-4A56-ACB1-B22EE5561DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E04EE80-9529-4A56-ACB1-B22EE5561DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E04EE80-9529-4A56-ACB1-B22EE5561DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

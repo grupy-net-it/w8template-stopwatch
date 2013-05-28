@@ -1,0 +1,76 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="TemplateImport.MainView"
+	x:Name="Window"
+	Title="MainView"
+	Width="640" Height="480">
+
+	<Grid x:Name="LayoutRoot">
+		<Canvas x:Name="_420_74303a56_396a_47f5_b858_d40d494fba18" ClipToBounds="True" HorizontalAlignment="Left" Height="1080" UseLayoutRounding="False" VerticalAlignment="Top" Width="1920">
+			<Canvas x:Name="mainView" Height="1360" Canvas.Left="-50" Canvas.Top="-20" Width="2427">
+				<Canvas x:Name="fullScreen" Height="1360" Canvas.Left="0" Canvas.Top="0" Width="2427">
+					<Image x:Name="bg" Height="1080" Canvas.Left="50" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\bg.png" Canvas.Top="20" Width="1920"/>
+					<Canvas x:Name="graphicBg" Height="1360" Canvas.Left="0" Opacity="0.6" Canvas.Top="0" Width="676">
+						<Image x:Name="somTop" Height="545" Canvas.Left="46" Opacity="0.502" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\somTop.png" Canvas.Top="0" Width="409"/>
+						<Image x:Name="somBottom" Height="609" Canvas.Left="0" Opacity="0.502" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\somBottom.png" Canvas.Top="751" Width="676"/>
+						<Image x:Name="run" Height="205" Canvas.Left="115" Opacity="0.502" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\run.png" Canvas.Top="660" Width="213"/>
+					</Canvas>
+					<Canvas x:Name="graphicStopWatch" Height="181" Canvas.Left="409" Canvas.Top="163" Width="1204">
+						<Canvas x:Name="rectBackground" Height="181" Canvas.Left="0" Opacity="0.2" Canvas.Top="0" Width="1204">
+							<Image x:Name="MS1" Height="78" Canvas.Left="1000" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\MS1.png" Canvas.Top="103" Width="204"/>
+							<Image x:Name="MM1" Height="181" Canvas.Left="265" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\MM1.png" Canvas.Top="0" Width="307"/>
+							<Image x:Name="SS1" Height="181" Canvas.Left="634" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\SS1.png" Canvas.Top="0" Width="307"/>
+							<Image x:Name="HH" Height="120" Canvas.Left="0" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\HH.png" Canvas.Top="61" Width="204"/>
+						</Canvas>
+						<Canvas x:Name="rectResult" Height="149" Canvas.Left="486" Opacity="0.702" Canvas.Top="32" Width="718">
+							<Image x:Name="MS" Height="36" Canvas.Left="640" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\MS.png" Canvas.Top="113" Width="78"/>
+							<Image x:Name="MM" Height="23" Canvas.Left="0" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\MM.png" Canvas.Top="126" Width="86"/>
+							<Image x:Name="SS" Height="149" Canvas.Left="148" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\SS.png" Canvas.Top="0" Width="307"/>
+						</Canvas>
+					</Canvas>
+					<TextBlock x:Name="_00_03_41_20" Foreground="#FFFFFFFF" FontFamily="Segoe UI Semilight" IsHyphenationEnabled="True" Canvas.Left="424.5" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="569.285"><TextBlock.RenderTransform>
+							<MatrixTransform Matrix="0.896,0,0,0.896,0,0"/>
+						</TextBlock.RenderTransform><Run FontSize="197" Text="00:"/><Run FontSize="400" Text="03:41"/><Run FontSize="197" Text=":20"/></TextBlock>
+					<Canvas x:Name="StartPauseBtn" Height="262" Canvas.Left="879" Canvas.Top="405" Width="262">
+						<Image x:Name="Ellipse_1" Height="262" Canvas.Left="0" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\Ellipse 1.png" Canvas.Top="0" Width="262"/>
+						<Image x:Name="pauseIco" Height="115" Canvas.Left="95" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\pauseIco.png" Canvas.Top="75" Width="70"/>
+					</Canvas>
+					<Canvas x:Name="appbar" Height="126" Canvas.Left="49" Canvas.Top="975" Width="1922">
+						<Path x:Name="AppBarBg" Data="F1M1,2C1,2 1921,2 1921,2 1921,2 1921,125 1921,125 1921,125 1,125 1,125 1,125 1,2 1,2z" Fill="#FF000000" Height="126" Canvas.Left="0" Canvas.Top="0" Width="1922"/>
+						<Canvas x:Name="AppBarIconClear" Height="83" Canvas.Left="1796" Canvas.Top="19" Width="60">
+							<Image x:Name="Ellipse_2_copy1" Height="59" Canvas.Left="0" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\Ellipse 2 copy1.png" Canvas.Top="0" Width="60"/>
+							<Image x:Name="trashIco" Height="33" Canvas.Left="19" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\trashIco.png" Canvas.Top="14" Width="25"/>
+							<TextBlock x:Name="clear" Foreground="#FFFFFFFF" FontSize="17" FontFamily="Segoe UI" IsHyphenationEnabled="True" Canvas.Left="13" TextAlignment="Center" TextWrapping="Wrap" Text="clear" Canvas.Top="66"/>
+						</Canvas>
+						<Canvas x:Name="AppBarIconAddLap" Height="87" Canvas.Left="68" Canvas.Top="19" Width="60">
+							<Image x:Name="Ellipse_2_copy" Height="59" Canvas.Left="0" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\Ellipse 2 copy.png" Canvas.Top="0" Width="60"/>
+							<Image x:Name="plusIco" Height="31" Canvas.Left="15" Source="420_74303a56-396a-47f5-b858-d40d494fba18_Images\plusIco.png" Canvas.Top="14" Width="31"/>
+							<TextBlock x:Name="add_lap" Foreground="#FFFFFFFF" FontSize="17" FontFamily="Segoe UI" IsHyphenationEnabled="True" Canvas.Left="4" TextAlignment="Center" TextWrapping="Wrap" Text="add lap" Canvas.Top="66"/>
+						</Canvas>
+					</Canvas>
+					<Canvas x:Name="ListOfLaps" Height="408" Canvas.Left="1876" Canvas.Top="196" Width="551">
+						<Canvas x:Name="ListItem" Height="50" Canvas.Left="1" Canvas.Top="358" Width="544">
+							<TextBlock x:Name="lap_1" Foreground="#FFFFFFFF" FontSize="50" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="-4" TextAlignment="Left" TextWrapping="Wrap" Text="lap 1" Canvas.Top="-12"/>
+							<TextBlock x:Name="_00_00_21_01" Foreground="#FFFFFFFF" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="304" TextAlignment="Left" TextWrapping="Wrap" Canvas.Top="-14"><Run FontSize="50" Text="00:"/><Run FontSize="60" Text="00:21"/><Run FontSize="50" Text=":01"/></TextBlock>
+						</Canvas>
+						<Canvas x:Name="ListItem_copy" Height="50" Canvas.Left="1" Canvas.Top="286" Width="550">
+							<TextBlock x:Name="lap_2" Foreground="#FFFFFFFF" FontSize="50" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="-4" TextAlignment="Left" TextWrapping="Wrap" Text="lap 2" Canvas.Top="-12"/>
+							<TextBlock x:Name="_00_01_43_14" Foreground="#FFFFFFFF" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="304" TextAlignment="Left" TextWrapping="Wrap" Canvas.Top="-14"><Run FontSize="50" Text="00:"/><Run FontSize="60" Text="01:43"/><Run FontSize="50" Text=":14"/></TextBlock>
+						</Canvas>
+						<Canvas x:Name="ListItem_copy_2" Height="50" Canvas.Left="1" Canvas.Top="214" Width="544">
+							<TextBlock x:Name="lap_3" Foreground="#FFFFFFFF" FontSize="50" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="-4" TextAlignment="Left" TextWrapping="Wrap" Text="lap 3" Canvas.Top="-12"/>
+							<TextBlock x:Name="_00_02_51_1" Foreground="#FFFFFFFF" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="304" TextAlignment="Left" TextWrapping="Wrap" Canvas.Top="-14"><Run FontSize="50" Text="00:"/><Run FontSize="60" Text="02:51"/><Run FontSize="50" Text=":21"/></TextBlock>
+						</Canvas>
+						<Canvas x:Name="ListItem_copy_3" Height="50" Canvas.Left="1" Canvas.Top="144" Width="544">
+							<TextBlock x:Name="lap_4" Foreground="#FFFFFFFF" FontSize="50" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="-4" TextAlignment="Left" TextWrapping="Wrap" Text="lap 4" Canvas.Top="-12"/>
+							<TextBlock x:Name="_00_02_51_21" Foreground="#FFFFFFFF" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="304" TextAlignment="Left" TextWrapping="Wrap" Canvas.Top="-14"><Run FontSize="50" Text="00:"/><Run FontSize="60" Text="02:51"/><Run FontSize="50" Text=":21"/></TextBlock>
+						</Canvas>
+						<TextBlock x:Name="Laps" Foreground="#FFFFFFFF" FontSize="72" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="-6.258" TextAlignment="Left" TextWrapping="Wrap" Text="Laps" Canvas.Top="-22.487"/>
+					</Canvas>
+					<TextBlock x:Name="Stopwatch" Foreground="#FFFFFFFF" FontSize="100" FontFamily="Segoe UI Light" IsHyphenationEnabled="True" Canvas.Left="158.742" TextAlignment="Left" TextWrapping="Wrap" Text="Stopwatch" Canvas.Top="55.513"/>
+				</Canvas>
+			</Canvas>
+		</Canvas>
+	</Grid>
+</Window>
