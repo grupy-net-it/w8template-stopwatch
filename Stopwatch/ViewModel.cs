@@ -6,7 +6,7 @@ using Windows.UI.Xaml;
 
 namespace Stopwatch
 {
-    public class ViewModel : INotifyPropertyChanged
+    public sealed class ViewModel : INotifyPropertyChanged
     {
         private static readonly TimeSpan TickSpan = new TimeSpan(0, 0, 0, 0, 10);
         private readonly DispatcherTimer timer = new DispatcherTimer();
@@ -44,7 +44,7 @@ namespace Stopwatch
         {
             get
             {
-                return Time.Hours.ToString("{0:2}");
+                return Time.Hours.ToString("D2");
             }
         }
 
@@ -52,7 +52,7 @@ namespace Stopwatch
         {
             get
             {
-                return Time.Minutes.ToString("{0:2}");
+                return Time.Minutes.ToString("D2");
             }
         }
 
@@ -60,7 +60,7 @@ namespace Stopwatch
         {
             get
             {
-                return Time.Seconds.ToString("{0:2}");
+                return Time.Seconds.ToString("D2");
             }
         }
 
@@ -68,7 +68,7 @@ namespace Stopwatch
         {
             get
             {
-                return Time.Milliseconds.ToString("{0:2}");
+                return Time.Milliseconds.ToString("D2").Substring(0, 2);
             }
         }
 
@@ -105,7 +105,7 @@ namespace Stopwatch
         }
 
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             var handler = PropertyChanged;
             if (handler != null)

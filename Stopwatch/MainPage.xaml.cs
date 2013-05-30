@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Stopwatch.Common;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace Stopwatch
@@ -8,11 +9,13 @@ namespace Stopwatch
     /// <summary>
     /// A page that displays a grouped collection of items.
     /// </summary>
-    public sealed partial class MainPage : Stopwatch.Common.LayoutAwarePage
+    public sealed partial class MainPage : LayoutAwarePage
     {
         public MainPage()
         {
             InitializeComponent();
+
+            DataContext = new ViewModel();
         }
 
         /// <summary>
@@ -27,6 +30,24 @@ namespace Stopwatch
         protected override void LoadState(object navigationParameter, Dictionary<string, object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
+        }
+
+        private void StartButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var viewModel = DataContext as ViewModel;
+            if (viewModel == null)
+            {
+                throw new NullReferenceException();
+            }
+
+            if (!viewModel.IsWorking)
+            {
+                viewModel.Start();
+            }
+            else
+            {
+                viewModel.Pause();
+            }
         }
     }
 }

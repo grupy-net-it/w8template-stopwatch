@@ -29,8 +29,9 @@
                        FontSize="80" />
         </Grid>
         <Viewbox Margin="0,100,126,0"
-        	Grid.RowSpan="2">
-            <Grid Height="668" Width="1240">
+                 Grid.RowSpan="2">
+            <Grid Height="668"
+                  Width="1240">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="320" />
                     <ColumnDefinition Width="*" />
@@ -42,38 +43,96 @@
                 </Grid.RowDefinitions>
 
                 <Canvas Grid.Column="0"
-        			Grid.Row="0"
-        			Margin="0 -100 0 0"
-        			Opacity="0.25">
+                        Grid.Row="0"
+                        Margin="0 -100 0 0"
+                        Opacity="0.25">
                     <Image Canvas.Top="0"
-        				Source="Assets/somTop.png" />
+                           Source="Assets/somTop.png" />
                     <Image Canvas.Top="622"
-        				Source="Assets/somBottom.png"
-        				Canvas.Left="-112" />
+                           Source="Assets/somBottom.png"
+                           Canvas.Left="-112" />
                     <Image Canvas.Left="24"
-        				Canvas.Top="557"
-        				Source="Assets/run.png" />
+                           Canvas.Top="557"
+                           Source="Assets/run.png" />
                 </Canvas>
                 <Canvas Grid.Column="1"
-        			Grid.Row="0"
-        			Opacity="0.2">
+                        Grid.Row="0"
+                        Opacity="0.2">
                     <Image Canvas.Top="49"
-        				Source="Assets/T1.png" />
+                           Source="Assets/T1.png" />
                     <Image Canvas.Left="197"
-        				Source="Assets/T2.png" />
+                           Source="Assets/T2.png" />
                     <Image Canvas.Left="475"
-        				Source="Assets/T2.png" />
+                           Source="Assets/T2.png" />
                     <Image Canvas.Left="754"
-        				Canvas.Top="83"
-        				Source="Assets/T3.png" />
+                           Canvas.Top="83"
+                           Source="Assets/T3.png" />
                 </Canvas>
-
                 <Button Grid.Column="1"
-        			Grid.Row="1"
-        			BorderThickness="0"
-        			HorizontalAlignment="Center">
+                        Grid.Row="1"
+                        BorderThickness="0"
+                        HorizontalAlignment="Center" Click="StartButton_OnClick">
                     <Image Source="Assets/PauseButton.png" />
                 </Button>
+                <Grid Grid.Column="1"
+                      Grid.Row="2"
+                      Margin="80,-40,80,40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="128" />
+                        <ColumnDefinition Width="22" />
+                        <ColumnDefinition Width="214" />
+                        <ColumnDefinition Width="42" />
+                        <ColumnDefinition Width="204" />
+                        <ColumnDefinition Width="22" />
+                        <ColumnDefinition Width="128" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               FontFamily="Segoe UI Light"
+                               FontWeight="Light"
+                               FontSize="120"
+                               Text="{Binding Hours}" />
+                    <TextBlock Grid.Column="1"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               FontFamily="Segoe UI Light"
+                               FontWeight="Light"
+                               FontSize="120"
+                               Text=":" />
+                    <TextBlock Grid.Column="2"
+                               FontFamily="Segoe UI Light"
+                               FontWeight="SemiLight"
+                               FontSize="200"
+                               Text="{Binding Minutes}"
+                               Margin="0,26,0,0" />
+                    <TextBlock Grid.Column="3"
+                               FontFamily="Segoe UI Light"
+                               FontWeight="SemiLight"
+                               FontSize="200"
+                               Text=":"
+                               Margin="0,26,0,0" />
+                    <TextBlock Grid.Column="4"
+                               FontFamily="Segoe UI Light"
+                               FontWeight="SemiLight"
+                               FontSize="200"
+                               Text="{Binding Seconds}"
+                               Margin="0,26,0,0" />
+                    <TextBlock Grid.Column="5"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Bottom"
+                               FontFamily="Segoe UI Light"
+                               FontWeight="Light"
+                               FontSize="120"
+                               Text="." />
+                    <TextBlock Grid.Column="6"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Bottom"
+                               FontFamily="Segoe UI Light"
+                               FontWeight="Light"
+                               FontSize="120"
+                               Text="{Binding Miliseconds}" />
+                </Grid>
             </Grid>
         </Viewbox>
     </Grid>
