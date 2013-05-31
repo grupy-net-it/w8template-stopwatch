@@ -10,7 +10,8 @@ namespace Stopwatch
     {
         private static readonly TimeSpan TickSpan = new TimeSpan(0, 0, 0, 0, 10);
         private readonly DispatcherTimer timer = new DispatcherTimer();
-        private TimeSpan time;
+        private DateTime startTime;
+        private TimeSpan timeElapsed;
         private bool isWorking;
         
         public ViewModel()
@@ -25,18 +26,22 @@ namespace Stopwatch
         {
             get
             {
-                return time;
+                return DateTime.Now - startTime + timeElapsed;
+            }
+        }
+
+        public TimeSpan TimeElapsed
+        {
+            get
+            {
+                return timeElapsed;
             }
 
             set
             {
-                time = value;
+                timeElapsed = value;
 
-                OnPropertyChanged();
-                OnPropertyChanged("Hours");
-                OnPropertyChanged("Minutes");
-                OnPropertyChanged("Seconds");
-                OnPropertyChanged("Miliseconds");
+                ReleasePropertiesChange();
             }
         }
 
@@ -68,7 +73,7 @@ namespace Stopwatch
         {
             get
             {
-                return Time.Milliseconds.ToString("D2").Substring(0, 2);
+                return Time.Milliseconds.ToString("D2").Substring(0, 1);
             }
         }
 
@@ -89,19 +94,21 @@ namespace Stopwatch
         public void Start()
         {
             timer.Start();
+            startTime = DateTime.Now;
             IsWorking = true;
         }
 
         public void Pause()
         {
             timer.Stop();
+            timeElapsed += DateTime.Now - startTime;
             IsWorking = false;
         }
 
         public void Stop()
         {
             Pause();
-            time = new TimeSpan(0, 0, 0);
+            timeElapsed = new TimeSpan(0, 0, 0);
         }
 
         [NotifyPropertyChangedInvocator]
@@ -114,9 +121,18 @@ namespace Stopwatch
             }
         }
 
+        private void ReleasePropertiesChange()
+        {
+            OnPropertyChanged("TimeElapsed");
+            OnPropertyChanged("Hours");
+            OnPropertyChanged("Minutes");
+            OnPropertyChanged("Seconds");
+            OnPropertyChanged("Miliseconds");
+        }
+
         private void TimerTick(object sender, object e)
         {
-            Time += TickSpan;
+            ReleasePropertiesChange();
         }
     }
 }
