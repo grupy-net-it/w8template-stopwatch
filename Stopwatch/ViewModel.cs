@@ -18,6 +18,8 @@ namespace Stopwatch
         {
             timer.Interval = TickSpan;
             timer.Tick += TimerTick;
+            startTime = DateTime.Now;
+            TimeElapsed = new TimeSpan(0);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
