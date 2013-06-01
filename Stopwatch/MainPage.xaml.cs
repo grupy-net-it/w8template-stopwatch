@@ -82,5 +82,10 @@ namespace Stopwatch
                 }
             }
         }
+
+        private void Unsnap_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.UI.ViewManagement.ApplicationView.TryUnsnap();
+        }
     }
 }

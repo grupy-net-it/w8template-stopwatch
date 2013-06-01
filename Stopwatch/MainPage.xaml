@@ -78,15 +78,15 @@
                         <Grid x:Name="SquaresDeciseconds"></Grid>
                     </Canvas>
                 </Canvas>
-                <Button Grid.Column="1"
+                <Button Grid.Column="0" Grid.ColumnSpan="2"
                         Grid.Row="1"
                         BorderThickness="0"
                         HorizontalAlignment="Center" Click="StartButton_OnClick">
                     <Image Source="Assets/PauseButton.png" />
                 </Button>
-                <Grid Grid.Column="1"
-                      Grid.Row="2"
-                      Margin="80,-40,80,40">
+                
+                    <Grid Margin="0,-40,0,40" Grid.Column="0" Grid.ColumnSpan="2"
+                      Grid.Row="2" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="128" />
                         <ColumnDefinition Width="22" />
@@ -143,8 +143,9 @@
                                FontSize="120"
                                Text="{Binding Miliseconds}" />
                 </Grid>
+                
 
-                <Button Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,100,0">Unsnap</Button>
+                <Button x:Name="button" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,100,0" Visibility="Collapsed" Click="Unsnap_Click">Unsnap</Button>
             </Grid>
         </Viewbox>
 
@@ -172,6 +173,13 @@
                         </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="button">
+                        	<DiscreteObjectKeyFrame KeyTime="0">
+                        		<DiscreteObjectKeyFrame.Value>
+                        			<Visibility>Visible</Visibility>
+                        		</DiscreteObjectKeyFrame.Value>
+                        	</DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
                     </Storyboard>
                 </VisualState>
