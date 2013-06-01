@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using Stopwatch.Common;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Media;
+using Windows.UI;
 
 namespace Stopwatch
 {
@@ -16,6 +20,8 @@ namespace Stopwatch
             InitializeComponent();
 
             DataContext = new ViewModel();
+
+            this.CreateSquares();
         }
 
         /// <summary>
@@ -47,6 +53,33 @@ namespace Stopwatch
             else
             {
                 viewModel.Pause();
+            }
+        }
+
+        private void CreateSquares()
+        {
+            this.CreateSquaresOfType(2, 5, this.SquaresDeciseconds, 24, 6, "Deciseconds");
+            this.CreateSquaresOfType(6, 10, this.SquaresSeconds, 19, 6, "Seconds");
+            this.CreateSquaresOfType(6, 10, this.SquaresMinutes, 19, 6, "Minutes");
+            this.CreateSquaresOfType(4, 6, this.SquaresHours, 24, 6, "Hours");
+        }
+
+        private void CreateSquaresOfType(int rows, int cols, Grid grid, double width, double margin, string name)
+        {
+            for (int row = 0; row < rows; row++)
+            {
+                grid.RowDefinitions.Add(new RowDefinition());
+                for (int col = 0; col < cols; col++)
+                {
+                    grid.ColumnDefinitions.Add(new ColumnDefinition());
+                    var rect = new Rectangle() { Width = width, Height = width, Margin = new Thickness(0, 0, margin, margin), Fill = new SolidColorBrush(Colors.White)/*, Opacity = 0.2*/ };
+                    grid.Children.Add(rect);
+                    rect.SetValue(Grid.RowProperty, row);
+                    rect.SetValue(Grid.ColumnProperty, col);
+                    var binding = new Binding();
+                    binding.Path = new PropertyPath(string.Format("Squares{1}[{0}]", row * cols + col, name));
+                    rect.SetBinding(OpacityProperty, binding);
+                }
             }
         }
     }
